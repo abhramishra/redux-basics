@@ -10,14 +10,17 @@ const setUser = (users) => {
         type: 'SET_USER', payload: users
     }
 }
-
+ // thunk is making available dispatch method in this action generator
 export const startSetUser = () => {
-    return (dispatch) => {      // thunk is making available dispatch method in this action generator
+    return (dispatch) => {     
         axios.get('http://jsonplaceholder.typicode.com/users')
             .then(res => {
                 console.log(res.data)
                 const users = res.data
                 dispatch(setUser(users))
+            })
+            .catch(err => {
+                console.log('Error', err)
             })
     }
 }

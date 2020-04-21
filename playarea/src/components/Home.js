@@ -10,7 +10,6 @@ import { connect } from 'react-redux'
 import { increment } from '../action/count';
 
 function Home(props) {
-    console.log("props-", props)
     return (
         <div>
             <h4>This is Home component</h4>
