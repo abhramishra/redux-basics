@@ -4,11 +4,13 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import countReducer from '../reducer/count'
 import usersReducer from '../reducer/user'
+import messageReducer from '../reducer/message'
 import thunk from 'redux-thunk'
 const configureStore = () => {
     const store = createStore(combineReducers({
         count: countReducer,
-        users: usersReducer
+        users: usersReducer,
+        messages: messageReducer
     }), applyMiddleware(thunk) )
     return store
 }
